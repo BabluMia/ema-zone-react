@@ -1,0 +1,43 @@
+.products{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+  } 
+  .carts-div {
+    padding: 80px 104px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 45px;
+  }
+  .side-cart {
+    padding-top: 28px;
+    background: rgba(255, 153, 0, 0.31);
+    height: 620px;
+    color: #1c2b35;
+    padding-left: 22px;
+  }
+  .side-cart h2 {
+    margin-bottom: 28px 0 40px 45px;
+  }
+  .side-cart h2 {
+    font-size: 25px;
+  }
+  .side-cart p {
+    font-size: 17px;
+  }
+  .button {
+    width: 160px;
+    padding: 10px 0px;
+    border: none;
+    outline: none;
+    margin-top: 6px;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 4px;
+  } 
+  .button:hover{
+      background-color: wheat!important;
+      color: black;
+      transition: .6s all ease;
+  }
+  

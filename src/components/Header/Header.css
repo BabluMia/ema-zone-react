@@ -1,0 +1,36 @@
+.header{
+    height: 80px;
+    background-color: #1C2B35;
+    padding-right: 146px;
+    padding-left: 146px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header a{
+    text-decoration: none;
+    color: aqua;
+    margin:0 8px;
+    padding: 8px 16px;
+    font-size: 17px;
+    position: relative;
+}
+.effect a:hover{
+    color: orange ;
+    transition: .5s all ease;
+}
+.effect a::after{
+    content: '';
+    width: 0;
+    height: 3px ;
+    background-color: orange;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+}
+
+.effect a:hover::after{
+    width: 100%;
+    transition: .5s all ease;
+    color: orange;
+}
