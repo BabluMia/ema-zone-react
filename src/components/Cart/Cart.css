@@ -1,19 +1,14 @@
-.products{
-    display: grid;
-    grid-template-columns: 4fr 1fr;
-  } 
-  .carts-div {
-    padding: 80px 104px;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 45px;
-  }
-  /* .side-cart {
+.cart{
+    position: sticky;
+    top: 0;
+}
+.side-cart {
     padding-top: 28px;
     background: rgba(255, 153, 0, 0.31);
-    height: 620px;
+    /* height: 620px; */
     color: #1c2b35;
     padding-left: 22px;
+    
   }
   .side-cart h2 {
     margin-bottom: 28px 0 40px 45px;
@@ -40,4 +35,4 @@
       color: black;
       transition: .6s all ease;
   }
-   */
+  

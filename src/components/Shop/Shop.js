@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Product from "../Product/Product";
 import "./Shop.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
+import Cart from "../Cart/Cart";
+import { addToDb } from "../../utilities/fakedb";
 
 const Shop = () => {
-  const element = <FontAwesomeIcon icon={faShoppingCart} />
+  
   const [products, setProducts] = useState([]);
   useEffect(() => {
     fetch("products.json")
@@ -21,6 +21,7 @@ const Shop = () => {
     // setCount(count + 1)
     const newCount = [...count,product]
     setCount(newCount)
+    addToDb(product.id)
   }
 
   return (
@@ -31,23 +32,7 @@ const Shop = () => {
         ))}
       </div>
       <div className="side-cart">
-        <h2>Order Summary</h2>
-        <p>Selected Items: {count.length} </p>
-        <p>Total Price:$</p>
-        <p>Total Shipping Charge: $5</p>
-        <p>Tax: $114 6</p>
-        <h2>Grand Total: $1559</h2>
-        <button className="button"
-          style={{ backgroundColor: "#FF3030", border: "2px solid #FF3030" }}
-        >
-          Add To Cart {element}
-        </button>
-        <br />
-        <button className="button"
-          style={{ backgroundColor: "#FF9900", border: "2px solid #FF9900" }}
-        >
-          Review Order
-        </button>
+       <Cart cart={count}></Cart>
       </div>
     </div>
   );
