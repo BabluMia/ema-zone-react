@@ -3,17 +3,12 @@ import Product from "../Product/Product";
 import "./Shop.css";
 import Cart from "../Cart/Cart";
 import { addToDb, getStordCard } from "../../utilities/fakedb";
+import useProducts from "../../hooks/useProducts";
+
 
 const Shop = () => {
-  const [products, setProducts] = useState([]);
+  const [products, setProducts] = useProducts();
   const [cart, setCart] = useState([]);
-  useEffect(() => {
-    fetch("products.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setProducts(data);
-      });
-  }, []);
   const newProd = products.slice(0, 20);
 
   useEffect(() => {
@@ -29,23 +24,14 @@ const Shop = () => {
     }
     setCart(savedCart)
   }, [products]);
+ 
 
-  // useEffect(()=>{
-  //   const storedCart = getStordCard()
-  //   const savedCart =[]
-  //   for(const id in storedCart){
-  //     const addedProduct = products.find(product => product.id === id)
-  //     if(addedProduct){
-  //       savedCart.push(addedProduct)
-  //     }
-  //   }
-  //   setCart(savedCart)
-  // },[products])
+  
 
   // cart cart
 
   const handleAddToCart = (selectedProduct) => {
-    console.log(selectedProduct);
+    // console.log(selectedProduct);
     let newCart = [];
     const exists = cart.find(product => product.id === selectedProduct.id);
     if(!exists){
