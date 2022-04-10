@@ -9,7 +9,7 @@ import "./Login.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [signInWithEmailAndPassword, loading, user, error] =
+  const [signInWithEmailAndPassword, user,loading, error] =
     useSignInWithEmailAndPassword(auth);
     
     const navigate = useNavigate();
@@ -25,13 +25,20 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
+  if (user) {
+    console.log(user);
+    navigate(from,{replace : true})
+    
+  }
+
+  
+
   const handleUserLogin = (event) => {
     event.preventDefault();
     signInWithEmailAndPassword(email, password);
-    if (user) {
-      navigate(from ,{replace:true})
-    }
+    
   };
+  
 
   return (
     <div className="form-container">

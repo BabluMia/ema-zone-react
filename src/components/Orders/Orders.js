@@ -32,7 +32,9 @@ const Orders = () => {
           <button onClick={()=>navigate('/shipment')} style={{ background: "transparent" }}>
             Proceed Shipment
           </button>
+          
         </Cart>
+        <Link to="/shipment">Go to </Link>
       </div>
     </div>
   );
