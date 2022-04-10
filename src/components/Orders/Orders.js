@@ -29,8 +29,8 @@ const Orders = () => {
       </div>
       <div className="side-cart pb-5">
         <Cart cart={cart}>
-          <button onClick={()=>navigate('/inventory')} style={{ background: "transparent" }}>
-            Proceed Checkout
+          <button onClick={()=>navigate('/shipment')} style={{ background: "transparent" }}>
+            Proceed Shipment
           </button>
         </Cart>
       </div>

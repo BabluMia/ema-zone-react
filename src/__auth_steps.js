@@ -7,6 +7,9 @@
 6.create all event handler .
 7. install react firebase  npm install --save react-firebase-hooks
 8. useCreateUserWithEmailAndPassword(auth); fromreact firebase hooks
+9. sign in and redirect 
+10. Create require auth 
+11.Protected router
 
 
 
