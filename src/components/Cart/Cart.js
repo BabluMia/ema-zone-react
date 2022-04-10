@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons'
 
-const Cart = ({cart}) => {
+const Cart = ({cart ,children}) => {
     const element = <FontAwesomeIcon icon={faShoppingCart} />
     // console.log(cart);
     let total = 0;
@@ -36,7 +36,7 @@ const Cart = ({cart}) => {
         className="button"
         style={{ backgroundColor: "#FF9900", border: "2px solid #FF9900" }}
       >
-        Review Order
+        {children}
       </button>
     </div>
   );
