@@ -10,18 +10,18 @@ const Orders = () => {
   const [products, setProducts] = useProducts();
   const [cart, setCart] = useCart(products);
   const handleRemoveProduct = (product) => {
-    const rest = cart.filter((pd) => pd.id !== product.id);
+    const rest = cart.filter((pd) => pd._id !== product._id);
     setCart(rest);
-    removeFromDb(product.id);
+    removeFromDb(product._id);
   };
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return (
     <div className="shop-container products">
       <div className="products-container w-50 h-100 mx-auto">
         {cart.map((product) => (
           <ReviewItem
-            key={product.id}
+            key={product._id}
             product={product}
             handleRemoveProduct={handleRemoveProduct}
           ></ReviewItem>
@@ -29,12 +29,13 @@ const Orders = () => {
       </div>
       <div className="side-cart pb-5">
         <Cart cart={cart}>
-          <button onClick={()=>navigate('/shipment')} style={{ background: "transparent" }}>
+          <button
+            onClick={() => navigate("/shipment")}
+            style={{ background: "transparent", color: "black" }}
+          >
             Proceed Shipment
           </button>
-          
         </Cart>
-        <Link to="/shipment">Go to </Link>
       </div>
     </div>
   );
